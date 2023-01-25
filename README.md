@@ -26,8 +26,8 @@
   <td align="center"><a href="https://github.com/mineclover"><img src="https://avatars.githubusercontent.com/u/61359316?v=4" width="150px;" /></a></td>
   <td align="center"><a href="https://github.com/jisooround"><img src="https://avatars.githubusercontent.com/u/110647022?v=4" width="150px;" /></a></td>
   </tr>
-  <td> 메인 / 검색 / 상세</td>
-  <td> 로그인 / 회원가입 / 게시판</td>
-  <td> 개인정보 수정 / 찜목록 / 리뷰목록</td>
+  <td> 메인<br/>검색<br/>상세</td>
+  <td> 로그인<br/>회원가입<br/>게시판</td>
+  <td> 개인정보 수정<br/>찜목록<br/>리뷰목록</td>
   </tbody>
 </table>
