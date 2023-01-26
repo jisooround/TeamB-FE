@@ -4,7 +4,13 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:react-hooks/recommended'],
+  extends: [
+    'airbnb',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'some-other-config-you-use',
+    'prettier',
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
