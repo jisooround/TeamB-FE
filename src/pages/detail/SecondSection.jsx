@@ -78,7 +78,7 @@ const index = () => {
   useEffect(() => {
     if (!location.hash) return;
     console.log('useEffect : location', location.hash);
-    document.querySelector(location.hash).scrollIntoView({ behavior: 'smooth' });
+    document.querySelector(location.hash).scrollIntoView({ behavior: 'smooth', block: 'center' });
   }, [location.hash]);
 
   console.log('location', location);
