@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import FirstSection from './FirstSection';
 import SecondSection from './SecondSection';
+import Test from './Test';
 
 const DetailRoot = styled.div`
   display: flex;
@@ -10,7 +11,6 @@ const DetailRoot = styled.div`
   padding: 0px;
   width: 100%;
   position: relative;
-  background: #ffffff;
 `;
 
 const SectionWrapper = styled.div`
@@ -19,16 +19,18 @@ const SectionWrapper = styled.div`
   align-items: center;
 
   width: 100%;
+  height: 100%;
   max-width: 1136px;
   padding-top: 32px;
+  gap: 32px;
 `;
 
 const index = () => {
   return (
     <DetailRoot>
       <SectionWrapper>
-        <FirstSection />
         <Test />
+        <FirstSection />
         <SecondSection />
       </SectionWrapper>
     </DetailRoot>
