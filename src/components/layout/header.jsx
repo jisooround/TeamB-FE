@@ -10,7 +10,7 @@ const Header = () => {
       <Inner>
         <Logo>
           <Link to={'/'}>
-            <img src="./src/assets/mainlogo.png" alt="logo" />
+            <img src="/assets/mainlogo.png" alt="logo" />
           </Link>
         </Logo>
         <Menu>
