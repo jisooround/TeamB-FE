@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import RootArticle from './RootArticle';
 import { useLocation, useParams } from 'react-router-dom';
+import KakaoMap from './KakaoMap';
 
 const Nav = styled.nav`
   position: sticky;
@@ -94,9 +95,12 @@ const index = () => {
           </Link>
         ))}
       </Nav>
-      {outline.map((item) => (
-        <RootArticle key={item.key} id={item.key} />
-      ))}
+      {outline.map((item) => {
+        if (item.key === 'mapData') {
+          return <KakaoMap key={item.key} id={item.key} />;
+        }
+        return <RootArticle key={item.key} id={item.key} />;
+      })}
     </ResultSection>
   );
 };
