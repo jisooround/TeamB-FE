@@ -13,9 +13,7 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: #0F0F0F;
   }
-  .swiper-rtl > .swiper-wrapper {
-    transition-timing-function : linear;
-  }
+
 `;
 
 export default GlobalStyles;

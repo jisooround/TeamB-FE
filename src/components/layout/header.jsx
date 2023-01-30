@@ -3,14 +3,37 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { RiLoginCircleLine } from 'react-icons/Ri';
 import { AiFillHeart } from 'react-icons/Ai';
+import { useEffect } from 'react';
+import { kakaoLoad } from '@atom/loadAtom';
+import { useRecoilState } from 'recoil';
 
 const Header = () => {
+  const [test, setTest] = useRecoilState(kakaoLoad);
+  useEffect(() => {
+    if (!import.meta.env.VITE_KAKAO) return;
+    if (test) return;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${
+      import.meta.env.VITE_KAKAO
+    }&autoload=false`;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      kakao.maps.load(() => {
+        setTest(true);
+        /*...*/
+      });
+    };
+  }, []);
+
   return (
     <Container>
       <Inner>
         <Logo>
           <Link to={'/'}>
-            <img src="./src/assets/mainlogo.png" alt="logo" />
+            <img src="/assets/mainlogo.png" alt="logo" />
           </Link>
         </Logo>
         <Menu>
@@ -59,7 +82,7 @@ const Menu = styled.div`
   p {
     font-size: 14px;
     font-weight: 600;
-    padding-right: 20px;
+    margin-right: 20px;
     color: #676767;
   }
   .mapage,

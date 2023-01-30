@@ -6,12 +6,14 @@ import GlobalStyles from './global/globalStyles';
 
 function App() {
   return (
-    <RecoilRoot>
-      <Header />
+    <>
       <GlobalStyles />
-      <Outlet />
-      <Footer />
-    </RecoilRoot>
+      <RecoilRoot>
+        <Header />
+        <Outlet />
+        <Footer />
+      </RecoilRoot>
+    </>
   );
 }
 
