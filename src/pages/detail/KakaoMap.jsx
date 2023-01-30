@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { kakaoLoad } from '@atom/loadAtom';
 import { useRecoilValue } from 'recoil';
@@ -24,8 +24,8 @@ const MapRegion = styled.div`
 // 아이디는 더 내려가서 제목에 넣는다.
 const Index = ({ id }) => {
   const kakaoState = useRecoilValue(kakaoLoad);
-  console.log('kakaoState', kakaoState);
   useEffect(() => {
+    console.log('kakaoState', kakaoState);
     if (!kakaoState) return;
     kakao.maps.load(function () {
       // v3가 모두 로드된 후, 이 콜백 함수가 실행됩니다.
@@ -37,7 +37,7 @@ const Index = ({ id }) => {
       };
       const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
     });
-  }, []);
+  }, [kakaoState]);
 
   return (
     <RootArticle>
@@ -45,7 +45,7 @@ const Index = ({ id }) => {
         <div>주소</div>
         <div> 테스트</div>
       </MapRegion>
-      <div id="kakao"></div>
+      <RootArticle id="kakao"></RootArticle>
     </RootArticle>
   );
 };
