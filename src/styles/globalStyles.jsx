@@ -13,6 +13,13 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
     color: #0F0F0F;
   }
+  ::selection {
+    color: white;
+    background-color: #2358c5;
+  }
+  .swiper-rtl > .swiper-wrapper {
+    transition-timing-function : linear;
+  }
 
 `;
 
