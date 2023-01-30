@@ -59,7 +59,7 @@ const Menu = styled.div`
   p {
     font-size: 14px;
     font-weight: 600;
-    padding-right: 20px;
+    margin-right: 20px;
     color: #676767;
   }
   .mapage,
