@@ -1,7 +1,8 @@
 import { RecoilRoot } from 'recoil';
 import { Outlet } from 'react-router-dom';
 import Header from './components/layout/Header';
-import GlobalStyles from '@styles/globalStyles';
+import Footer from './components/layout/Footer';
+import GlobalStyles from './global/globalStyles';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <RecoilRoot>
         <Header />
         <Outlet />
+        <Footer />
       </RecoilRoot>
     </>
   );
