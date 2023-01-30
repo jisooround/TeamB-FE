@@ -10,6 +10,8 @@ export default defineConfig({
       { find: '@', replacement: resolve(__dirname, 'src') },
       { find: '@components', replacement: resolve(__dirname, 'src/components') },
       { find: '@styles', replacement: resolve(__dirname, 'src/styles') },
+      { find: '@hooks', replacement: resolve(__dirname, 'src/Hooks') },
+      { find: '@atom', replacement: resolve(__dirname, 'src/Atoms') },
     ],
   },
 });

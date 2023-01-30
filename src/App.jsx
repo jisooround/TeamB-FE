@@ -5,11 +5,13 @@ import GlobalStyles from '@styles/globalStyles';
 
 function App() {
   return (
-    <RecoilRoot>
-      <Header />
+    <>
       <GlobalStyles />
-      <Outlet />
-    </RecoilRoot>
+      <RecoilRoot>
+        <Header />
+        <Outlet />
+      </RecoilRoot>
+    </>
   );
 }
 
