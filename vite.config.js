@@ -12,6 +12,7 @@ export default defineConfig({
       { find: '@styles', replacement: resolve(__dirname, 'src/styles') },
       { find: '@hooks', replacement: resolve(__dirname, 'src/Hooks') },
       { find: '@atom', replacement: resolve(__dirname, 'src/Atoms') },
+      { find: '@api', replacement: resolve(__dirname, 'src/api') },
     ],
   },
 });

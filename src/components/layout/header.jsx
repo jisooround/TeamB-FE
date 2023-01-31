@@ -9,13 +9,14 @@ import { useRecoilState } from 'recoil';
 
 const Header = () => {
   const [test, setTest] = useRecoilState(kakaoLoad);
+
   useEffect(() => {
     if (!import.meta.env.VITE_KAKAO) return;
     if (test) return;
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
       import.meta.env.VITE_KAKAO
     }&autoload=false`;
     document.head.appendChild(script);
@@ -23,7 +24,6 @@ const Header = () => {
     script.onload = () => {
       kakao.maps.load(() => {
         setTest(true);
-        /*...*/
       });
     };
   }, []);

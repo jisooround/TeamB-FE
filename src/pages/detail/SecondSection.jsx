@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import RootArticle from './RootArticle';
 import { useLocation, useParams } from 'react-router-dom';
 import KakaoMap from './KakaoMap';
+import { getDetails } from '@api/axios';
 
 const Nav = styled.nav`
   position: sticky;
@@ -18,6 +19,7 @@ const Nav = styled.nav`
   margin-left: -2px;
   height: 48px;
   border-bottom: 1px solid #eee;
+  z-index: 100;
   a {
     flex: 1 0 0;
 
@@ -46,7 +48,7 @@ const ResultSection = styled.section`
 
   border-radius: 16px;
   background-color: white;
-  padding: 8px;
+  padding: 24px;
 
   max-width: 1136px;
   box-sizing: border-box;
@@ -75,29 +77,57 @@ const outline = [
 const index = () => {
   const { tourId } = useParams();
   const location = useLocation();
+  const [tour, setTour] = useState({});
 
   useEffect(() => {
+    // 페이지 이동
     if (!location.hash) return;
-    console.log('useEffect : location', location.hash);
-    document.querySelector(location.hash).scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, [location.hash]);
+    console.log('스크롤 실행');
+    gotoID(location.hash);
+  }, [tour]);
+
+  useEffect(() => {
+    getDetails(tourId)
+      .then((res) => {
+        console.log('res', '넣음');
+        setTour(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [tourId]);
 
   console.log('location', location);
   console.log('useParams : tourId', tourId);
-  //params는 정보 넣을 때 쓸 것임
 
-  return (
+  function gotoID(id) {
+    console.log('gotoID : id', id);
+    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  //params는 정보 넣을 때 쓸 것임
+  //
+  return !tour.title ? (
+    <div>loading...</div>
+  ) : (
     <ResultSection>
       <Nav>
         {outline.map((item) => (
-          <Link to={`#${item.key}`} key={item.key}>
+          <Link to={`#${item.key}`} key={item.key} onClick={() => gotoID(`#${item.key}`)}>
             {item.name}
           </Link>
         ))}
       </Nav>
+
       {outline.map((item) => {
         if (item.key === 'mapData') {
-          return <KakaoMap key={item.key} id={item.key} />;
+          return (
+            <KakaoMap
+              key={item.key}
+              id={item.key}
+              tour={{ address: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
+            />
+          );
         }
         return <RootArticle key={item.key} id={item.key} />;
       })}

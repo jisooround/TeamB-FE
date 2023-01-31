@@ -22,20 +22,44 @@ const MapRegion = styled.div`
   width: 100%;
 `;
 // 아이디는 더 내려가서 제목에 넣는다.
-const Index = ({ id }) => {
+const Index = ({ id, tour }) => {
   const kakaoState = useRecoilValue(kakaoLoad);
+  const { address, mapX, mapY, title } = tour;
+  console.log(address, mapX, mapY, title);
+  console.log('내려온 형태', tour);
   useEffect(() => {
     console.log('kakaoState', kakaoState);
     if (!kakaoState) return;
     kakao.maps.load(function () {
-      // v3가 모두 로드된 후, 이 콜백 함수가 실행됩니다.
-      const container = document.getElementById('kakao'); //지도를 담을 영역의 DOM 레퍼런스
+      const container = document.getElementById('kakao');
       const options = {
-        //지도를 생성할 때 필요한 기본 옵션
-        center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-        level: 3, //지도의 레벨(확대, 축소 정도)
+        center: new kakao.maps.LatLng(mapY, mapX),
+        level: 1,
       };
-      const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+      const map = new kakao.maps.Map(container, options);
+
+      const markerPosition = new kakao.maps.LatLng(mapY, mapX);
+
+      // 마커를 생성합니다
+      const marker = new kakao.maps.Marker({
+        position: markerPosition,
+      });
+
+      // 마커가 지도 위에 표시되도록 설정합니다
+      marker.setMap(map);
+
+      // 인포윈도우로 장소에 대한 설명을 표시합니다
+      var iwContent = `<div style="padding:5px;">${title}</div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        iwPosition = new kakao.maps.LatLng(mapY, mapX); //인포윈도우 표시 위치입니다
+
+      // 인포윈도우를 생성합니다
+      const infowindow = new kakao.maps.InfoWindow({
+        position: iwPosition,
+        content: iwContent,
+      });
+
+      // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+      infowindow.open(map, marker);
     });
   }, [kakaoState]);
 
