@@ -10,7 +10,6 @@ const Search = () => {
       <Inner>
         {searchListDummyData.map((list) => {
           return <SearchCard list={list} key={list.contentid} />;
-          // console.log(list);
         })}
       </Inner>
     </Container>
