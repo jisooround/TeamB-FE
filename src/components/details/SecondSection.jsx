@@ -5,6 +5,7 @@ import RootArticle from './RootArticle';
 import { useLocation, useParams } from 'react-router-dom';
 import KakaoMap from './KakaoMap';
 import { getDetails } from '@api/axios';
+import Review from './Review';
 
 const Nav = styled.nav`
   position: sticky;
@@ -128,6 +129,8 @@ const index = () => {
               tour={{ address: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
             />
           );
+        } else if (item.key === 'review') {
+          return <Review key={item.key} id={item.key} rate={tour.rate} />;
         }
         return <RootArticle key={item.key} id={item.key} />;
       })}

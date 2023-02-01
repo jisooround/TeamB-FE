@@ -10,7 +10,8 @@ const RootArticle = styled.article`
 
   width: 100%;
   max-width: 1136px;
-  height: 2000px;
+  height: 50vh;
+  min-height: 320px;
 
   background-color: #f5f5f5;
 `;

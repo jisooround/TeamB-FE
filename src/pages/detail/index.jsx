@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import FirstSection from './FirstSection';
-import SecondSection from './SecondSection';
-import Test from './Test';
+import FirstSection from '@components/details/FirstSection';
+import SecondSection from '@components/details/SecondSection';
+import Test from '@components/details/Test';
 
 const DetailRoot = styled.div`
   display: flex;
