@@ -1,26 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import { AiTwotoneStar } from 'react-icons/Ai';
-import { AiFillHeart } from 'react-icons/Ai';
-import { AiOutlineHeart } from 'react-icons/Ai';
+import LikeIcon from '../../components/common/LikeIcon';
 import style from './SearchCard.module.scss';
 
 const SearchCard = ({ list }) => {
-  const [like, setLike] = useState(false);
-
-  function handleLikeClick() {
-    setLike((like) => !like);
-  }
-
   return (
     <div className={style.card}>
       <div className={style.image}>
         <img src={list.firstimage} alt={list.title + ' 사진'} />
-        {like ? (
-          <AiFillHeart className={style.likeIcon} onClick={handleLikeClick} />
-        ) : (
-          <AiOutlineHeart className={style.likeIcon} onClick={handleLikeClick} />
-        )}
+        <LikeIcon className={style.likeIcon} list={list} />
       </div>
       <div className={style.info}>
         <div className={style.titleWrap}>

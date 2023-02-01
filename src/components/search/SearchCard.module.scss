@@ -1,12 +1,13 @@
 .card {
-  width: 240px;
-  height: 300px;
-  padding: 35px 0;
+  width: 100%;
+  height: auto;
+  padding: 45px 15px;
   z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
+  box-sizing: border-box;
 }
 
 .image {
@@ -40,6 +41,7 @@
 
 .info {
   width: 100%;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
 
@@ -50,6 +52,7 @@
   .titleWrap {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 7px;
     width: 100%;
 
