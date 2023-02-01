@@ -1,9 +1,9 @@
 import React from 'react';
+import style from './LikeCard.module.scss';
 import { AiTwotoneStar } from 'react-icons/Ai';
 import LikeIcon from '../../components/common/LikeIcon';
-import style from './SearchCard.module.scss';
 
-const SearchCard = ({ list }) => {
+const LikeCard = ({ list }) => {
   return (
     <div className={style.card}>
       <div className={style.image}>
@@ -28,4 +28,4 @@ const SearchCard = ({ list }) => {
   );
 };
 
-export default SearchCard;
+export default LikeCard;

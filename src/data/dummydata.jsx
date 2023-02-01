@@ -2,12 +2,12 @@ export const searchListDummyData = [
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
     contentid: 127480,
-    title: '올림픽공원',
+    title: '올림픽공원 올림픽공원 올림픽공원 올림픽공원 올림픽공원 올림픽공원 올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
     inOut: '실외',
-    rate: 4,
+    rate: 4.27,
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
