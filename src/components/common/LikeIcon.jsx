@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillHeart } from 'react-icons/Ai';
 import { AiOutlineHeart } from 'react-icons/Ai';
 import style from './LikeIcon.module.scss';
@@ -8,7 +8,19 @@ import { likeItemState } from '../../Atoms/likeAtom.jsx';
 const LikeIcon = ({ list }) => {
   const [like, setLike] = useState(false);
   const setLikeItem = useSetRecoilState(likeItemState);
-  const test = useRecoilValue(likeItemState);
+  const likeItemList = useRecoilValue(likeItemState);
+
+  const likeCheck = () => {
+    likeItemList.filter((obj) => {
+      if (obj.contentid === list.contentid) {
+        setLike(true);
+      }
+    });
+  };
+
+  useEffect(() => {
+    likeCheck();
+  }, [likeItemList]);
 
   const insertItem = () => {
     setLikeItem((oldLikeItem) => [
@@ -27,13 +39,12 @@ const LikeIcon = ({ list }) => {
   };
 
   const removeItem = () => {
-    console.log(test);
-    const num = test.filter((obj) => {
+    console.log(likeItemList);
+    const num = likeItemList.filter((obj) => {
       return obj.contentid !== list.contentid;
     });
-    console.log('++++++++=', num);
     setLikeItem(num);
-    // setLikeItem.splice(num, 1);
+    console.log(likeItemList);
   };
 
   function handleInsertLike() {

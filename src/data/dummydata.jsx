@@ -1,8 +1,8 @@
 export const searchListDummyData = [
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원 올림픽공원 올림픽공원 올림픽공원 올림픽공원 올림픽공원 올림픽공원',
+    contentid: 1,
+    title: '1올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -11,8 +11,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 2,
+    title: '2롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -22,8 +22,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 3,
+    title: '3올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -32,8 +32,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 4,
+    title: '4롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -43,8 +43,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 5,
+    title: '5올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -53,8 +53,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 6,
+    title: '6롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -64,8 +64,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 7,
+    title: '7올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -74,8 +74,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 8,
+    title: '8롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -85,8 +85,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 9,
+    title: '9올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -95,8 +95,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 10,
+    title: '10롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -106,8 +106,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 11,
+    title: '11올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -116,8 +116,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 12,
+    title: '12롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -127,8 +127,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 13,
+    title: '13올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -137,8 +137,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 14,
+    title: '14롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -148,8 +148,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 15,
+    title: '15올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -158,8 +158,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 16,
+    title: '16롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
@@ -169,8 +169,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '올림픽공원',
+    contentid: 17,
+    title: '17올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
     firstimage: 'http://www.econovill.com/news/photo/201608/296795_116653_4145.jpg',
@@ -179,8 +179,8 @@ export const searchListDummyData = [
   },
   {
     addr1: '전라남도 신안군 흑산면 가거도길 38-2',
-    contentid: 127480,
-    title: '롯데월드',
+    contentid: 18,
+    title: '18롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',
     firstimage:
