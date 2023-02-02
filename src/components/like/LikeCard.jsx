@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './LikeCard.module.scss';
 import { AiTwotoneStar } from 'react-icons/Ai';
-import LikeIcon from '../../components/common/LikeIcon';
+import LikeIcon from '../common/LikeIcon';
 
 const LikeCard = ({ list }) => {
   return (
