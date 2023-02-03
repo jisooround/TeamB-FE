@@ -3,16 +3,16 @@ import { recoilPersist } from 'recoil-persist';
 
 const { persistAtom } = recoilPersist();
 
-export const likeItemState = atom({
-  key: 'likeItemState',
+export const wishItemState = atom({
+  key: 'wishItemState',
   default: [],
   effects_UNSTABLE: [persistAtom],
 });
 
-export const insertLikeItemState = selector({
-  key: 'insertLikeItemState',
+export const insertWishItemState = selector({
+  key: 'insertWishItemState',
   get: ({ get }) => {
-    const test = get(likeItemState);
+    const test = get(wishItemState);
     return test;
   },
 });
