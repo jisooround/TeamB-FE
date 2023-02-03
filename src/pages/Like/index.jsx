@@ -2,20 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 import PageTitle from '@/components/common/PageTitle';
 import { useRecoilValue } from 'recoil';
-import { likeItemState } from '../../Atoms/likeAtom';
-import LikeCard from '../../components/like/LikeCard';
+import { wishItemState } from '../../Atoms/wishAtom';
+import WishCard from '../../components/wish/wishCard/WishCard';
+import WishFilter from '../../components/wish/wishFilter/WishFilter';
 
-const Like = () => {
-  const likeItems = useRecoilValue(likeItemState);
-  console.log(likeItems);
+const Wish = () => {
+  const wishItems = useRecoilValue(wishItemState);
+  const wishLocation = [];
+  for (let i = 0; i < wishItems.length; i++) {
+    const location = wishItems[i].addr1.split(' ')[0];
+    wishLocation.push(location);
+  }
 
   return (
     <Container>
       <PageTitle title={'위시리스트'} />
       <Inner>
-        {likeItems.map((list) => {
-          return <LikeCard list={list} />;
-        })}
+        <WishFilter wishLocation={wishLocation} />
+        <WishList>
+          {wishItems.map((list) => {
+            return <WishCard list={list} />;
+          })}
+        </WishList>
       </Inner>
     </Container>
   );
@@ -35,4 +43,14 @@ const Inner = styled.div`
   flex-wrap: wrap;
 `;
 
-export default Like;
+const WishList = styled.div`
+  margin-top: 20px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+`;
+
+export default Wish;
