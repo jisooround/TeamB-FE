@@ -40,9 +40,9 @@ const Header = () => {
           </Link>
         </Logo>
         <Menu>
-          <Link to={'/'} className="like">
+          <Link to={'/wish'} className="wish">
             <AiFillHeart className="icon" />
-            <p>찜 목록</p>
+            <p>위시리스트</p>
           </Link>
           <Link to={'/'} className="mapage">
             {/* <BiCoffee className="icon" /> */}
@@ -85,13 +85,18 @@ const Menu = styled.div`
   p {
     font-size: 14px;
     font-weight: 600;
-    margin-right: 20px;
     color: #676767;
   }
-  .mapage,
-  .like {
+  .login,
+  .wish {
     display: flex;
     align-items: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    :hover {
+      background-color: #f4f4f4;
+      transition: 0.2s;
+    }
     .icon {
       color: #2358c5;
       font-size: 20px;
