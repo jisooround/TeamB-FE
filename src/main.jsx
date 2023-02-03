@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Search from './pages/Search';
 import NotFound from './pages/Common/NotFound';
 import Detail from './pages/Detail';
-import Like from './pages/Like';
+import Wish from './pages/Wish';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       { index: true, path: '/', element: <Home /> },
       { path: '/search', element: <Search /> },
       { path: '/detail/:tourId', element: <Detail /> },
-      { path: '/like', element: <Like /> },
+      { path: '/wish', element: <Wish /> },
     ],
   },
 ]);
