@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiTwotoneStar } from 'react-icons/Ai';
-import LikeIcon from '../../components/common/LikeIcon';
+import WishIcon from '../../components/common/WishIcon/WishIcon';
 import style from './SearchCard.module.scss';
 
 const SearchCard = ({ list }) => {
@@ -8,13 +8,13 @@ const SearchCard = ({ list }) => {
     <div className={style.card}>
       <div className={style.image}>
         <img src={list.firstimage} alt={list.title + ' 사진'} />
-        <LikeIcon className={style.likeIcon} list={list} />
+        <WishIcon className={style.wishIcon} list={list} isSearch={true} />
       </div>
       <div className={style.info}>
         <div className={style.titleWrap}>
           <p className={style.title}>{list.title}</p>
           <p className={style.rate}>
-            <AiTwotoneStar className="rate-icon" />
+            <AiTwotoneStar className={style.rateIcon} />
             {list.rate}
           </p>
         </div>
