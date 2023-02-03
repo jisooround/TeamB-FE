@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { RiLoginCircleLine } from 'react-icons/Ri';
+import { Link, useLocation } from 'react-router-dom';
 import { AiFillHeart } from 'react-icons/Ai';
-import { useEffect } from 'react';
 import { kakaoLoad } from '@atom/loadAtom';
 import { useRecoilState } from 'recoil';
 
 const Header = () => {
   const [test, setTest] = useRecoilState(kakaoLoad);
+  const [mainPath, setMainPath] = useState(false);
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   useEffect(() => {
     if (!import.meta.env.VITE_KAKAO) return;
     if (test) return;
+    if (pathname === '/') setMainPath(true);
 
     const script = document.createElement('script');
     script.async = true;
@@ -26,10 +29,10 @@ const Header = () => {
         /*...*/
       });
     };
-  }, []);
+  }, [pathname]);
 
   return (
-    <Container>
+    <Container mainPath={mainPath}>
       <Inner>
         <Logo>
           <Link to={'/'}>
@@ -41,9 +44,9 @@ const Header = () => {
             <AiFillHeart className="icon" />
             <p>위시리스트</p>
           </Link>
-          <Link to={'/'} className="login">
-            <RiLoginCircleLine className="icon" />
-            <p>로그인</p>
+          <Link to={'/'} className="mapage">
+            {/* <BiCoffee className="icon" /> */}
+            <p>후원하기</p>
           </Link>
         </Menu>
       </Inner>
@@ -55,7 +58,7 @@ const Container = styled.div`
   width: 100%;
   height: 65px;
   padding: 10px 0;
-  border-bottom: 2px solid #eee;
+  border-bottom: ${(props) => (props.pathname === '/' ? 'none' : '2px solid #eee')};
 `;
 
 const Inner = styled.div`
