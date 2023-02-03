@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import Search from './pages/Search';
 import NotFound from './pages/Common/NotFound';
 import Detail from './pages/Detail';
-import Wish from './pages/Wish';
+import Wish from './pages/Wish';
 
 const router = createBrowserRouter([
   {
