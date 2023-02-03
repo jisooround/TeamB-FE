@@ -37,7 +37,7 @@ const Header = () => {
           </Link>
         </Logo>
         <Menu>
-          <Link to={'/like'} className="like">
+          <Link to={'/wish'} className="wish">
             <AiFillHeart className="icon" />
             <p>위시리스트</p>
           </Link>
@@ -85,7 +85,7 @@ const Menu = styled.div`
     color: #676767;
   }
   .login,
-  .like {
+  .wish {
     display: flex;
     align-items: center;
     padding: 10px 15px;

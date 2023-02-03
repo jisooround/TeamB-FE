@@ -8,6 +8,7 @@ import WishFilter from '../../components/wish/wishFilter/WishFilter';
 
 const Wish = () => {
   const wishItems = useRecoilValue(wishItemState);
+  console.log(wishItems);
   const wishLocation = [];
   for (let i = 0; i < wishItems.length; i++) {
     const location = wishItems[i].addr1.split(' ')[0];
