@@ -13,10 +13,12 @@
     "axios": "^1.2.4",
     "lottie-react": "^2.3.1",
     "react": "^18.2.0",
+    "react-confirm-alert": "^3.0.6",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-router-dom": "^6.7.0",
     "recoil": "^0.7.6",
+    "recoil-persist": "^4.2.0",
     "styled-components": "^5.3.6",
     "styled-reset": "^4.4.5",
     "swiper": "^8.4.6"
