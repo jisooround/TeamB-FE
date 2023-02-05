@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import RootArticle from './RootArticle';
-import { useLocation, useParams } from 'react-router-dom';
+
 import KakaoMap from './KakaoMap';
-import { getDetails } from '@api/axios';
 import Review from './Review';
 
 const Nav = styled.nav`
@@ -75,37 +74,7 @@ const outline = [
   { key: 'review', name: '평점과 후기' },
 ];
 
-const index = () => {
-  const { tourId } = useParams();
-  const location = useLocation();
-  const [tour, setTour] = useState({});
-
-  useEffect(() => {
-    // 페이지 이동
-    if (!location.hash) return;
-    console.log('스크롤 실행');
-    gotoID(location.hash);
-  }, [tour]);
-
-  useEffect(() => {
-    getDetails(tourId)
-      .then((res) => {
-        console.log('res', '넣음');
-        setTour(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [tourId]);
-
-  console.log('location', location);
-  console.log('useParams : tourId', tourId);
-
-  function gotoID(id) {
-    console.log('gotoID : id', id);
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-
+const index = ({ tour, gotoID }) => {
   //params는 정보 넣을 때 쓸 것임
   //
   return !tour.title ? (
@@ -126,7 +95,7 @@ const index = () => {
             <KakaoMap
               key={item.key}
               id={item.key}
-              tour={{ address: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
+              tour={{ addr1: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
             />
           );
         } else if (item.key === 'review') {

@@ -67,8 +67,7 @@ const Index = ({ id, tour }) => {
   return (
     <RootArticle>
       <MapRegion id={id}>
-        <div>주소</div>
-        <div> 테스트</div>
+        <div>{tour.addr1}</div>
       </MapRegion>
       <RootArticle id="kakao"></RootArticle>
     </RootArticle>
