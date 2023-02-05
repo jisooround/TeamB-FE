@@ -1,17 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import style from './WishFilter.module.scss';
+import { useRecoilValue } from 'recoil';
+import { wishItemState } from '@/Atoms/wishAtom';
+import styled from 'styled-components';
 
-const Wishfilter = ({ wishLocation }) => {
-  const set = new Set(wishLocation);
-  const uniqueArr = [...set];
+const Wishfilter = ({ setLocation, filter, setFilter }) => {
+  const wishItems = useRecoilValue(wishItemState);
+
+  const handleClick = (event) => {
+    if (event.target.outerText === '전체') {
+      setFilter('');
+    } else {
+      setFilter(event.target.outerText);
+    }
+  };
+
   return (
-    <div className={style.wrap}>
-      <p className={(style.total, style.focus)}>전체</p>
-      {uniqueArr.map((location) => {
-        return <p>{location}</p>;
+    <Filter className={style.wrap}>
+      <p className={style.total} onClick={handleClick}>
+        전체
+      </p>
+      {setLocation.map((location) => {
+        return <p onClick={handleClick}>{location}</p>;
       })}
-    </div>
+    </Filter>
   );
 };
+
+const Filter = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  display: flex;
+  p {
+    padding: 20px 20px;
+    cursor: pointer;
+    color: #000;
+
+    &:hover {
+      background-color: #eee;
+      border-radius: 30px;
+    }
+
+    &.focus {
+      color: #fff;
+      background-color: rgb(33, 33, 33);
+      border-radius: 30px;
+    }
+  }
+`;
 
 export default Wishfilter;
