@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PageTitle from '@/components/common/PageTitle';
 import { useRecoilValue } from 'recoil';
@@ -8,22 +8,32 @@ import WishFilter from '../../components/wish/wishFilter/WishFilter';
 
 const Wish = () => {
   const wishItems = useRecoilValue(wishItemState);
-  console.log(wishItems);
+  const [filter, setFilter] = useState('');
+
   const wishLocation = [];
   for (let i = 0; i < wishItems.length; i++) {
     const location = wishItems[i].addr1.split(' ')[0];
     wishLocation.push(location);
   }
 
+  const setLocation = [...new Set(wishLocation)];
+  console.log(filter);
+
   return (
     <Container>
       <PageTitle title={'위시리스트'} />
       <Inner>
-        <WishFilter wishLocation={wishLocation} />
+        <WishFilter setLocation={setLocation} filter={filter} setFilter={setFilter} />
         <WishList>
-          {wishItems.map((list) => {
-            return <WishCard list={list} />;
-          })}
+          {filter === ''
+            ? wishItems.map((list) => {
+                return <WishCard list={list} />;
+              })
+            : wishItems
+                .filter((x) => x.addr1.split(' ')[0] === filter)
+                .map((list) => {
+                  return <WishCard list={list} />;
+                })}
         </WishList>
       </Inner>
     </Container>
