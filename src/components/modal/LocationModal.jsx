@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const LocationModal = ({ locationList, setLocation }) => {
+const LocationModal = ({ locationList, setLocation, onClose }) => {
   const [active, setActive] = useState('999');
   const toggleActive = (e) => {
     setActive(e.target.value);
@@ -31,7 +31,7 @@ const LocationModal = ({ locationList, setLocation }) => {
       </ul>
       <button
         onClick={() => {
-          props.onClose();
+          onClose();
         }}
       >
         선택완료

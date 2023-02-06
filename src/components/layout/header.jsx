@@ -2,19 +2,17 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
 import { AiFillHeart } from 'react-icons/Ai';
+import { FaCoffee } from 'react-icons/Fa';
 import { kakaoLoad } from '@atom/loadAtom';
 import { useRecoilState } from 'recoil';
 
 const Header = () => {
   const [test, setTest] = useRecoilState(kakaoLoad);
-  const [mainPath, setMainPath] = useState(false);
   const { pathname } = useLocation();
-  console.log(pathname);
 
   useEffect(() => {
     if (!import.meta.env.VITE_KAKAO) return;
     if (test) return;
-    if (pathname === '/') setMainPath(true);
 
     const script = document.createElement('script');
     script.async = true;
@@ -32,7 +30,7 @@ const Header = () => {
   }, [pathname]);
 
   return (
-    <Container mainPath={mainPath}>
+    <Container pathname={pathname}>
       <Inner>
         <Logo>
           <Link to={'/'}>
@@ -44,8 +42,8 @@ const Header = () => {
             <AiFillHeart className="icon" />
             <p>위시리스트</p>
           </Link>
-          <Link to={'/'} className="mapage">
-            {/* <BiCoffee className="icon" /> */}
+          <Link to={'/'} className="sponsor">
+            <FaCoffee className="icon" />
             <p>후원하기</p>
           </Link>
         </Menu>
@@ -87,7 +85,7 @@ const Menu = styled.div`
     font-weight: 600;
     color: #676767;
   }
-  .login,
+  .sponsor,
   .wish {
     display: flex;
     align-items: center;
@@ -101,7 +99,6 @@ const Menu = styled.div`
       color: #2358c5;
       font-size: 20px;
       padding-right: 5px;
-      padding-bottom: 2px;
     }
   }
 `;

@@ -49,7 +49,7 @@ const Home = () => {
     <Container>
       <Swiper
         dir="rtl"
-        slidesPerView={2.8}
+        slidesPerView={3}
         spaceBetween={80}
         allowTouchMove={false}
         autoplay={{
@@ -88,7 +88,7 @@ const Home = () => {
         <h1>어디로 가시겠어요?</h1>
         <input onClick={locationModal} defaultValue={location} type="text" />
         <button>
-          <BiSearch className="icon" />
+          <BiSearch size="26" color="#fff" />
         </button>
       </Location>
     </Container>
@@ -97,7 +97,6 @@ const Home = () => {
 
 const Container = styled.div`
   width: 100%;
-  height: 3000px;
 `;
 
 const Location = styled.div`
@@ -113,9 +112,20 @@ const Location = styled.div`
     border: none;
     border-radius: 15px;
     padding: 0 20px;
-    box-shadow: 0 8px 16px 0 rgb(32 32 32 / 8%);
+    box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
+    box-sizing: border-box;
+    font-size: 20px;
+    &:focus {
+      outline: 2px solid #2358c5;
+    }
   }
   button {
+    background: #2358c5;
+    border: none;
+    width: 68px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
+    cursor: pointer;
   }
 `;
 
