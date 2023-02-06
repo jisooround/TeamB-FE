@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import RootArticle from './RootArticle';
-import { useLocation, useParams } from 'react-router-dom';
+
 import KakaoMap from './KakaoMap';
+import Review from './Review';
 
 const Nav = styled.nav`
   position: sticky;
@@ -18,6 +19,7 @@ const Nav = styled.nav`
   margin-left: -2px;
   height: 48px;
   border-bottom: 1px solid #eee;
+  z-index: 100;
   a {
     flex: 1 0 0;
 
@@ -46,7 +48,7 @@ const ResultSection = styled.section`
 
   border-radius: 16px;
   background-color: white;
-  padding: 8px;
+  padding: 24px;
 
   max-width: 1136px;
   box-sizing: border-box;
@@ -72,32 +74,32 @@ const outline = [
   { key: 'review', name: '평점과 후기' },
 ];
 
-const index = () => {
-  const { tourId } = useParams();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (!location.hash) return;
-    console.log('useEffect : location', location.hash);
-    document.querySelector(location.hash).scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, [location.hash]);
-
-  console.log('location', location);
-  console.log('useParams : tourId', tourId);
+const index = ({ tour, gotoID }) => {
   //params는 정보 넣을 때 쓸 것임
-
-  return (
+  //
+  return !tour.title ? (
+    <div>loading...</div>
+  ) : (
     <ResultSection>
       <Nav>
         {outline.map((item) => (
-          <Link to={`#${item.key}`} key={item.key}>
+          <Link to={`#${item.key}`} key={item.key} onClick={() => gotoID(`#${item.key}`)}>
             {item.name}
           </Link>
         ))}
       </Nav>
+
       {outline.map((item) => {
         if (item.key === 'mapData') {
-          return <KakaoMap key={item.key} id={item.key} />;
+          return (
+            <KakaoMap
+              key={item.key}
+              id={item.key}
+              tour={{ addr1: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
+            />
+          );
+        } else if (item.key === 'review') {
+          return <Review key={item.key} id={item.key} rate={tour.rate} />;
         }
         return <RootArticle key={item.key} id={item.key} />;
       })}

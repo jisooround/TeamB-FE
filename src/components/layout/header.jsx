@@ -16,7 +16,7 @@ const Header = () => {
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${
+    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${
       import.meta.env.VITE_KAKAO
     }&autoload=false`;
     document.head.appendChild(script);
@@ -24,7 +24,6 @@ const Header = () => {
     script.onload = () => {
       kakao.maps.load(() => {
         setTest(true);
-        /*...*/
       });
     };
   }, [pathname]);
