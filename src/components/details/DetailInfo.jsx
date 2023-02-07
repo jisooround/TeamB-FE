@@ -63,7 +63,7 @@ const DetailInfo = ({ tour }) => {
       <Optional>
         {optional.map((x) => {
           return (
-            <Card>
+            <Card key={x}>
               <DetailInfoIcon name={x} className="icon" />
               <p>{x}</p>
             </Card>
