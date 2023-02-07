@@ -97,23 +97,27 @@ const Home = () => {
 
 const Container = styled.div`
   width: 100%;
+  height: 85vh;
+  background-color: #fbfbfb;
 `;
 
 const Location = styled.div`
-  width: 1400px;
-  margin: 40px auto 0;
+  width: 80vw;
+  margin: 20px auto 0;
   display: flex;
   gap: 20px;
   h1 {
     font-family: SBAggroB;
-    font-size: 4vw;
+    font-size: 4.5vw;
   }
   input {
     border: none;
     border-radius: 15px;
-    padding: 0 20px;
     box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
     box-sizing: border-box;
+    padding: 0 20px;
+    margin-left: 30px;
+    height: 65px;
     font-size: 20px;
     &:focus {
       outline: 2px solid #2358c5;
@@ -122,7 +126,8 @@ const Location = styled.div`
   button {
     background: #2358c5;
     border: none;
-    width: 68px;
+    width: 65px;
+    height: 65px;
     border-radius: 15px;
     box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
     cursor: pointer;
