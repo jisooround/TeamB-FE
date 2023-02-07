@@ -88,7 +88,7 @@ const Home = () => {
         <h1>어디로 가시겠어요?</h1>
         <input onClick={locationModal} defaultValue={location} type="text" />
         <button>
-          <BiSearch className="icon" />
+          <BiSearch size="26" color="#fff" />
         </button>
       </Location>
     </Container>
