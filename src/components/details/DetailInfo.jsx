@@ -41,7 +41,7 @@ const DetailInfo = ({ tour }) => {
 };
 
 const Wrap = styled.div`
-  height: 1000px;
+  border: 1px solid #eee;
   box-sizing: border-box;
   padding: 30px 20px;
   h3 {

@@ -19,5 +19,5 @@ export const getDetails = async (detailId) => {
   const sending = {
     contentid: detailId,
   };
-  return instance.get(`tourList/detail`, { params: { ...sending } });
+  return instance.get(`tourlist/detail`, { params: { ...sending } });
 };
