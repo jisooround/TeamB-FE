@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiTwotoneStar } from 'react-icons/ai';
-import WishIcon from '../../components/common/WishIcon/WishIcon';
+import WishIcon from '@components/common/wishIcon/WishIcon';
 import styles from './SearchCard.module.scss';
 
 const SearchCard = ({ list }) => {

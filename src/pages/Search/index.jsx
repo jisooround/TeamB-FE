@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { searchListDummyData } from '@/data/dummydata';
 import SearchCard from '@components/search/SearchCard';
 import PageTitle from '@components/common/PageTitle';
-import Pagination from '@components/Common/pagination/Pagination';
+import Pagination from '@components/common/pagination/Pagination';
 import { useParams } from 'react-router-dom';
 
 const Search = () => {
