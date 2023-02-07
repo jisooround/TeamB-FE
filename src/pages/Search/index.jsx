@@ -13,7 +13,7 @@ const Search = () => {
 
       <Inner>
         {searchListDummyData.map((list) => {
-          return <SearchCard list={list} />;
+          return <SearchCard list={list} key={list.title} />;
         })}
       </Inner>
     </Container>
