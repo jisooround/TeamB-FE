@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
+import { BiSearch } from 'react-icons/Bi';
 import { AiFillHeart } from 'react-icons/Ai';
 import { FaCoffee } from 'react-icons/Fa';
 import { kakaoLoad } from '@atom/loadAtom';
@@ -9,6 +10,19 @@ import { useRecoilState } from 'recoil';
 const Header = () => {
   const [test, setTest] = useRecoilState(kakaoLoad);
   const { pathname } = useLocation();
+
+  // 검색어
+  const [value, setValue] = useState('');
+  const spaceCheck = value.trim().length;
+
+  const handleChange = (e) => {
+    let { value } = e.target;
+    setValue(value);
+  };
+
+  const handleSubmit = () => {
+    return spaceCheck !== 0 ? (window.location.href = `/search/${value}`) : null;
+  };
 
   useEffect(() => {
     if (!import.meta.env.VITE_KAKAO) return;
@@ -36,6 +50,30 @@ const Header = () => {
             <img src="/assets/mainlogo.png" alt="logo" />
           </Link>
         </Logo>
+        <SearchForm>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            <input
+              id="search-input"
+              type="text"
+              value={value}
+              placeholder="검색어를 입력해 주세요"
+              onChange={(e) => handleChange(e)}
+            />
+            <button
+              aria-label="submit"
+              onClick={() => {
+                handleSubmit(value, spaceCheck);
+                setValue('');
+              }}
+            >
+              <BiSearch size="24" color="#2358c5" />
+            </button>
+          </form>
+        </SearchForm>
         <Menu>
           <Link to={'/wish'} className="wish">
             <AiFillHeart className="icon" />
@@ -53,13 +91,14 @@ const Header = () => {
 
 const Container = styled.div`
   width: 100%;
-  height: 65px;
-  padding: 10px 0;
+  height: ${(props) => (props.pathname === '/' ? '15vh' : '100px')};
+  background-color: ${(props) => (props.pathname === '/' ? '#fbfbfb' : '#fff')};
   border-bottom: ${(props) => (props.pathname === '/' ? 'none' : '2px solid #eee')};
+  box-sizing: border-box;
 `;
 
 const Inner = styled.div`
-  width: 1136px;
+  width: 72vw;
   height: 100%;
   margin: auto;
   display: flex;
@@ -72,6 +111,36 @@ const Logo = styled.div`
   align-items: center;
   img {
     width: 170px;
+  }
+`;
+
+const SearchForm = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form {
+    position: relative;
+  }
+  input {
+    width: 20vw;
+    height: 45px;
+    font-size: 14px;
+    box-sizing: border-box;
+    border: 1px solid #2358c5;
+    border-radius: 8px;
+    padding: 10px 10px 10px 15px;
+    outline: none;
+    &:placeholder {
+      color: #eaebed;
+    }
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    cursor: pointer;
   }
 `;
 
