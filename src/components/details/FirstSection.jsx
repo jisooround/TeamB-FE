@@ -80,7 +80,7 @@ const index = ({ tour }) => {
     text = text.replace(/\<br\>/g, '');
     const array = text.split('\n');
     array.pop();
-    console.log('array ', array);
+    // console.log('array ', array);
 
     const result = array.map((item, index) => {
       return <p key={`text0${index}`}>{item}</p>;
@@ -139,7 +139,7 @@ const index = ({ tour }) => {
     return tags;
   }
 
-  console.log('first', tour);
+  // console.log('first', tour);
   return tour.title ? (
     <FirstSection>
       <FirstSectionLeft>
