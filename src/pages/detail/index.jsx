@@ -2,15 +2,14 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import FirstSection from '@components/details/FirstSection';
 import SecondSection from '@components/details/SecondSection';
-import Test from '@components/details/Test';
 import { useLocation, useParams } from 'react-router-dom';
 import { getDetails } from '@/api/api';
 
 const index = () => {
-  // const { id } = useParams();
-  const id = 2763807;
-  // const location = useLocation();
-  const [state, setState] = useState({});
+  const { tourId } = useParams();
+  // const id = 2763807;
+  const location = useLocation();
+  const [tour, setTour] = useState({});
   const [error, setError] = useState('');
 
   // useEffect(() => {
@@ -21,11 +20,15 @@ const index = () => {
   // }, []);
 
   useEffect(() => {
-    getDetails(id, setState, setError);
-  }, [id]);
+    try {
+      getDetails(tourId, setTour, setError);
+    } catch (error) {
+      console.log(error);
+    }
+  }, [tourId]);
 
-  // console.log('location', location);
-  // console.log('useParams : tourId', tourId);
+  console.log('location', location);
+  console.log('useParams : tourId', tourId);
 
   function gotoID(id) {
     // console.log('gotoID : id', id);
@@ -35,8 +38,8 @@ const index = () => {
   return (
     <DetailRoot>
       <SectionWrapper>
-        <FirstSection tour={state} gotoID={gotoID} />
-        <SecondSection tour={state} gotoID={gotoID} />
+        <FirstSection tour={tour} gotoID={gotoID} />
+        <SecondSection tour={tour} gotoID={gotoID} />
       </SectionWrapper>
     </DetailRoot>
   );
