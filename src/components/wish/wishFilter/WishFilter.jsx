@@ -5,6 +5,7 @@ import { wishItemState } from '@/Atoms/wishAtom';
 import styled from 'styled-components';
 
 const Wishfilter = ({ setLocation, filter, setFilter }) => {
+  console.log('Wishfilter');
   const wishItems = useRecoilValue(wishItemState);
   console.log(filter);
 
