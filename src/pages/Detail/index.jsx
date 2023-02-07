@@ -3,7 +3,29 @@ import styled from 'styled-components';
 import FirstSection from '@components/details/FirstSection';
 import SecondSection from '@components/details/SecondSection';
 import { useLocation, useParams } from 'react-router-dom';
-import { getDetails } from '@/api/api';
+import { getDetails } from '@api/api';
+import { detailDummydata } from '../../data/dummydata';
+
+const DetailRoot = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  width: 100%;
+  position: relative;
+`;
+
+const SectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  max-width: 1136px;
+  padding-top: 32px;
+  gap: 32px;
+`;
 
 const index = () => {
   const { tourId } = useParams();
@@ -44,26 +66,5 @@ const index = () => {
     </DetailRoot>
   );
 };
-
-const DetailRoot = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  width: 100%;
-  position: relative;
-`;
-
-const SectionWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
-  max-width: 1136px;
-  padding-top: 32px;
-  gap: 32px;
-`;
 
 export default index;
