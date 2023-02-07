@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiTwotoneStar } from 'react-icons/ai';
+import { MdImageNotSupported } from 'react-icons/md';
 import WishIcon from '@components/common/wishIcon/WishIcon';
 import styles from './SearchCard.module.scss';
 
@@ -7,7 +8,14 @@ const SearchCard = ({ list }) => {
   return (
     <div className={styles.card}>
       <div className={styles.image}>
-        <img src={list.firstimage} alt={list.title + ' 사진'} />
+        {list.firstimage ? (
+          <img src={list.firstimage} alt={list.title + ' 사진'} />
+        ) : (
+          <div className={styles.noImage}>
+            <MdImageNotSupported size="84" color="#fff" />
+            <p>No Image</p>
+          </div>
+        )}
         <WishIcon className={styles.wishIcon} list={list} isSearch={true} />
       </div>
       <div className={styles.info}>
