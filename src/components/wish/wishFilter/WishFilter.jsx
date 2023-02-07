@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import style from './WishFilter.module.scss';
+import styles from './WishFilter.module.scss';
 import { useRecoilValue } from 'recoil';
 import { wishItemState } from '@/Atoms/wishAtom';
 import styled from 'styled-components';
@@ -17,8 +17,8 @@ const Wishfilter = ({ setLocation, filter, setFilter }) => {
   };
 
   return (
-    <Filter className={style.wrap}>
-      <button className={style.total} onClick={handleClick} autofocus="autofocus">
+    <Filter className={styles.wrap}>
+      <button className={styles.total} onClick={handleClick} autofocus="autofocus">
         전체
       </button>
       {setLocation.map((location) => {
