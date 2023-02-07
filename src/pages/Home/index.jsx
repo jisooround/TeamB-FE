@@ -21,25 +21,22 @@ import locationData from '@/data/locationData';
 const Home = () => {
   const [locationList, setLocationList] = useState([]);
   const [location, setLocation] = useState('');
+  const [areaCode, setAreaCode] = useState(0);
 
   useEffect(() => {
-    async function getData() {
-      try {
-        //const response = await locationData();
-        const response = await locationData;
-        setLocationList(response);
-      } catch (error) {
-        console.log('에러가 발생했습니다.');
-      }
-    }
-    getData();
+    setLocationList(locationData);
   }, []);
 
   const locationModal = () => {
     confirmAlert({
       customUI: ({ onClose }) => {
         return (
-          <LocationModal onClose={onClose} locationList={locationList} setLocation={setLocation} />
+          <LocationModal
+            onClose={onClose}
+            locationList={locationList}
+            setLocation={setLocation}
+            setAreaCode={setAreaCode}
+          />
         );
       },
     });
@@ -86,10 +83,22 @@ const Home = () => {
 
       <Location>
         <h1>어디로 가시겠어요?</h1>
-        <input onClick={locationModal} defaultValue={location} type="text" />
-        <button>
-          <BiSearch size="26" color="#fff" />
-        </button>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <input onClick={locationModal} defaultValue={location} type="text" />
+          <button
+            aria-label="submit"
+            onClick={() => {
+              handleSubmit(value, spaceCheck);
+              setValue('');
+            }}
+          >
+            <BiSearch size="26" color="#fff" />
+          </button>
+        </form>
       </Location>
     </Container>
   );
