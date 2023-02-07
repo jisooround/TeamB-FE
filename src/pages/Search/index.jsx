@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { searchListDummyData } from '@/data/dummydata';
-import SearchCard from '@/components/search/SearchCard';
-import PageTitle from '@/components/common/PageTitle';
-import Pagination from '@/components/Common/pagination/Pagination';
+import SearchCard from '@components/search/SearchCard';
+import PageTitle from '@components/common/PageTitle';
+import Pagination from '@components/Common/pagination/Pagination';
 import { useParams } from 'react-router-dom';
 
 const Search = () => {
