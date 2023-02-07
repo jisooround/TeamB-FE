@@ -3,7 +3,7 @@ import styles from './WishCard.module.scss';
 import { AiTwotoneStar } from 'react-icons/ai';
 import WishIcon from '../../common/wishIcon/WishIcon';
 import { MdLocationPin } from 'react-icons/md';
-import { MdCall } from 'react-icons/Md';
+import { MdCall } from 'react-icons/md';
 
 const WishCard = ({ list }) => {
   return (
