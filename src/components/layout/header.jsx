@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
-import { BiSearch } from 'react-icons/Bi';
-import { AiFillHeart } from 'react-icons/Ai';
-import { FaCoffee } from 'react-icons/Fa';
+import { BiSearch } from 'react-icons/bi';
+import { AiFillHeart } from 'react-icons/ai';
+import { FaCoffee } from 'react-icons/fa';
 import { kakaoLoad } from '@atom/loadAtom';
 import { useRecoilState } from 'recoil';
 

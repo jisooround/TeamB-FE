@@ -1,5 +1,5 @@
 import React from 'react';
-import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/Md';
+import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 import styled from 'styled-components';
 
 export default function Pagination({ total, limit, page, setPage }) {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './WishCard.module.scss';
-import { AiTwotoneStar } from 'react-icons/Ai';
+import { AiTwotoneStar } from 'react-icons/ai';
 import WishIcon from '../../common/wishIcon/WishIcon';
-import { MdLocationPin } from 'react-icons/Md';
+import { MdLocationPin } from 'react-icons/md';
 import { MdCall } from 'react-icons/Md';
 
 const WishCard = ({ list }) => {

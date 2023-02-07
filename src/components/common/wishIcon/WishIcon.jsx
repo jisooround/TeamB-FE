@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { AiFillHeart } from 'react-icons/Ai';
-import { AiOutlineHeart } from 'react-icons/Ai';
+import { AiFillHeart } from 'react-icons/ai';
+import { AiOutlineHeart } from 'react-icons/ai';
 import styles from './WishIcon.module.scss';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { wishItemState } from '../../../Atoms/wishAtom.jsx';

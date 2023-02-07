@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { DiGithubBadge } from 'react-icons/Di';
+import { DiGithubBadge } from 'react-icons/di';
 import styled from 'styled-components';
 
 const Footer = () => {
