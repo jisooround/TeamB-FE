@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 const Wishfilter = ({ setLocation, filter, setFilter }) => {
   const wishItems = useRecoilValue(wishItemState);
+  console.log(filter);
 
   const handleClick = (event) => {
     if (event.target.outerText === '전체') {
@@ -17,11 +18,11 @@ const Wishfilter = ({ setLocation, filter, setFilter }) => {
 
   return (
     <Filter className={style.wrap}>
-      <p className={style.total} onClick={handleClick}>
+      <button className={style.total} onClick={handleClick} autofocus="autofocus">
         전체
-      </p>
+      </button>
       {setLocation.map((location) => {
-        return <p onClick={handleClick}>{location}</p>;
+        return <button onClick={handleClick}>{location}</button>;
       })}
     </Filter>
   );
@@ -30,10 +31,14 @@ const Wishfilter = ({ setLocation, filter, setFilter }) => {
 const Filter = styled.div`
   width: 100%;
   height: auto;
-  padding: 15px;
+  padding: 15px 0;
   display: flex;
-  p {
+  button {
+    background-color: transparent;
+    border: none;
     padding: 20px 20px;
+    font-size: 16px;
+    box-sizing: border-box;
     cursor: pointer;
     color: #000;
 
@@ -42,7 +47,7 @@ const Filter = styled.div`
       border-radius: 30px;
     }
 
-    &.focus {
+    &:focus {
       color: #fff;
       background-color: rgb(33, 33, 33);
       border-radius: 30px;
