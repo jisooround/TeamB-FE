@@ -119,27 +119,31 @@ const Location = styled.div`
     font-family: SBAggroB;
     font-size: 4.5vw;
   }
-  input {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
-    box-sizing: border-box;
-    padding: 0 20px;
-    margin-left: 30px;
-    height: 65px;
-    font-size: 20px;
-    &:focus {
-      outline: 2px solid #2358c5;
+  form {
+    display: flex;
+    gap: 20px;
+    input {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
+      box-sizing: border-box;
+      padding: 0 20px;
+      margin-left: 30px;
+      height: 65px;
+      font-size: 20px;
+      &:focus {
+        outline: 2px solid #2358c5;
+      }
     }
-  }
-  button {
-    background: #2358c5;
-    border: none;
-    width: 65px;
-    height: 65px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
-    cursor: pointer;
+    button {
+      background: #2358c5;
+      border: none;
+      width: 65px;
+      height: 65px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px 0 rgb(32 32 32 / 10%);
+      cursor: pointer;
+    }
   }
 `;
 
