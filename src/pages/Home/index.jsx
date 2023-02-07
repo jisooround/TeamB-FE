@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { BiSearch } from 'react-icons/Bi';
+//import { BiSearch } from 'react-icons/Bi';
 import Lottie from 'lottie-react';
 import raindrop from '@lottie/raindrop.json';
 import sun from '@lottie/sun.json';
@@ -88,7 +88,7 @@ const Home = () => {
         <h1>어디로 가시겠어요?</h1>
         <input onClick={locationModal} defaultValue={location} type="text" />
         <button>
-          <BiSearch className="icon" />
+          <div style={{ width: '100px', height: '100px' }} />
         </button>
       </Location>
     </Container>
