@@ -5,6 +5,7 @@ import RootArticle from './RootArticle';
 
 import KakaoMap from './KakaoMap';
 import Review from './Review';
+import DetailInfo from './DetailInfo';
 
 const Nav = styled.nav`
   position: sticky;
@@ -74,7 +75,7 @@ const outline = [
   { key: 'review', name: '평점과 후기' },
 ];
 
-const index = ({ tour, gotoID }) => {
+const SecondSection = ({ tour, gotoID }) => {
   //params는 정보 넣을 때 쓸 것임
   //
   return !tour.title ? (
@@ -88,23 +89,15 @@ const index = ({ tour, gotoID }) => {
           </Link>
         ))}
       </Nav>
-
-      {outline.map((item) => {
-        if (item.key === 'mapData') {
-          return (
-            <KakaoMap
-              key={item.key}
-              id={item.key}
-              tour={{ addr1: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
-            />
-          );
-        } else if (item.key === 'review') {
-          return <Review key={item.key} id={item.key} rate={tour.rate} />;
-        }
-        return <RootArticle key={item.key} id={item.key} />;
-      })}
+      <DetailInfo tour={tour} />
+      <RootArticle id={'weather'} />
+      <KakaoMap
+        id={'mapData'}
+        tour={{ addr1: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
+      />
+      <Review id={'review'} rate={tour.rate} />
     </ResultSection>
   );
 };
 
-export default index;
+export default SecondSection;
