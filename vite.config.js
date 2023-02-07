@@ -1,13 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import basicSsl from '@vitejs/plugin-basic-ssl';
-import dns from 'dns';
-dns.setDefaultResultOrder('verbatim');
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), basicSsl()],
+  plugins: [react()],
   resolve: {
     alias: [
       { find: '@', replacement: resolve(__dirname, 'src') },
@@ -20,5 +17,4 @@ export default defineConfig({
       { find: '@lottie', replacement: resolve(__dirname, 'src/lottie') },
     ],
   },
-  server: { https: true, host: 'localhost' },
 });
