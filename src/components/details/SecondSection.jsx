@@ -89,22 +89,13 @@ const SecondSection = ({ tour, gotoID }) => {
           </Link>
         ))}
       </Nav>
-
-      {/* {outline.map((item) => {
-        if (item.key === 'mapData') {
-          return (
-            <KakaoMap
-              key={item.key}
-              id={item.key}
-              tour={{ addr1: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
-            />
-          );
-        } else if (item.key === 'review') {
-          return <Review key={item.key} id={item.key} rate={tour.rate} />;
-        }
-        return <RootArticle key={item.key} id={item.key} />;
-      })} */}
       <DetailInfo tour={tour} />
+      <RootArticle id={'weather'} />
+      <KakaoMap
+        id={'mapData'}
+        tour={{ addr1: tour.addr1, mapX: tour.mapx, mapY: tour.mapy, title: tour.title }}
+      />
+      <Review id={'review'} rate={tour.rate} />
     </ResultSection>
   );
 };
