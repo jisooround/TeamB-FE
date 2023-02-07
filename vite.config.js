@@ -17,6 +17,7 @@ export default defineConfig({
       { find: '@atom', replacement: resolve(__dirname, 'src/Atoms') },
       { find: '@api', replacement: resolve(__dirname, 'src/api') },
       { find: '@utils', replacement: resolve(__dirname, 'src/utils') },
+      { find: '@lottie', replacement: resolve(__dirname, 'src/lottie') },
     ],
   },
   server: { https: true, host: 'localhost' },

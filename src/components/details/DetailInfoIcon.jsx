@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaBabyCarriage } from 'react-icons/Fa';
-import { FaDog } from 'react-icons/Fa';
-import { MdChildCare } from 'react-icons/Md';
+import { FaBabyCarriage } from 'react-icons/fa';
+import { FaDog } from 'react-icons/fa';
+import { MdChildCare } from 'react-icons/md';
 // import { heritage } from '../../utils/svg';
 import styled from 'styled-components';
 
