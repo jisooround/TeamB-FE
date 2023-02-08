@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BiSearch } from 'react-icons/bi';
 import { AiFillHeart } from 'react-icons/ai';
 import { FaCoffee } from 'react-icons/fa';
@@ -9,11 +9,9 @@ import { useRecoilState } from 'recoil';
 
 const Header = () => {
   const [test, setTest] = useRecoilState(kakaoLoad);
-  const { pathname } = useLocation();
-
-  // 검색어
   const [value, setValue] = useState('');
-  const spaceCheck = value.trim().length;
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     let { value } = e.target;
@@ -21,7 +19,7 @@ const Header = () => {
   };
 
   const handleSubmit = () => {
-    return spaceCheck !== 0 ? (window.location.href = `/search/${value}`) : null;
+    return navigate(`/search?keyword=${value}`);
   };
 
   useEffect(() => {
@@ -66,7 +64,7 @@ const Header = () => {
             <button
               aria-label="submit"
               onClick={() => {
-                handleSubmit(value, spaceCheck);
+                handleSubmit(value);
                 setValue('');
               }}
             >

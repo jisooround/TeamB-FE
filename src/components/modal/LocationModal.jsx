@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const LocationModal = ({ locationList, setLocation, onClose }) => {
-  const [active, setActive] = useState('999');
+const LocationModal = ({ locationList, setLocation, setAreaCode, onClose }) => {
+  const [active, setActive] = useState('0');
   const toggleActive = (e) => {
     setActive(e.target.value);
   };
@@ -15,11 +15,12 @@ const LocationModal = ({ locationList, setLocation, onClose }) => {
           ? locationList.map((item, idx) => {
               return (
                 <li
-                  value={idx}
-                  className={idx == active ? ' active' : ''}
+                  value={item.areacode}
+                  className={item.areacode == active ? ' active' : ''}
                   onClick={(e) => {
                     toggleActive(e);
                     setLocation(item.addr);
+                    setAreaCode(item.areacode);
                   }}
                   key={idx}
                 >
@@ -65,7 +66,7 @@ const Container = styled.div`
     gap: 13px;
     li {
       cursor: pointer;
-      width: calc(14.53% - 13px);
+      width: calc(14.5% - 13px);
       height: 45px;
       display: flex;
       align-items: center;
