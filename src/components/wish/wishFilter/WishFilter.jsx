@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import styles from './WishFilter.module.scss';
 import { useRecoilValue } from 'recoil';
 import { wishItemState } from '@/Atoms/wishAtom';
 import styled from 'styled-components';
@@ -8,22 +7,42 @@ const Wishfilter = ({ setLocation, filter, setFilter }) => {
   console.log('Wishfilter');
   const wishItems = useRecoilValue(wishItemState);
   console.log(filter);
+  const [active, setActive] = useState(999);
+  const toggleActive = (i) => {
+    setActive(i);
+  };
 
-  const handleClick = (event) => {
-    if (event.target.outerText === '전체') {
+  const handleClick = (e) => {
+    if (e.target.outerText === '전체') {
       setFilter('');
     } else {
-      setFilter(event.target.outerText);
+      setFilter(e.target.outerText);
     }
   };
 
   return (
-    <Filter className={styles.wrap}>
-      <button className={styles.total} onClick={handleClick}>
+    <Filter>
+      <button
+        className={active === 999 ? 'active' : ''}
+        onClick={(e) => {
+          toggleActive(999);
+          handleClick(e);
+        }}
+      >
         전체
       </button>
-      {setLocation.map((location) => {
-        return <button onClick={handleClick}>{location}</button>;
+      {setLocation.map((location, i) => {
+        return (
+          <button
+            className={i == active ? 'active' : ''}
+            onClick={(e) => {
+              handleClick(e);
+              toggleActive(i);
+            }}
+          >
+            {location}
+          </button>
+        );
       })}
     </Filter>
   );
@@ -48,7 +67,7 @@ const Filter = styled.div`
       border-radius: 30px;
     }
 
-    &:focus {
+    &.active {
       color: #fff;
       background-color: rgb(33, 33, 33);
       border-radius: 30px;
