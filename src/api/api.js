@@ -18,6 +18,14 @@ import { detailDummydata } from '@/data/dummydata';
 //   }
 // };
 
+export const getKeyword = async (page, keyword) => {
+  const sending = {
+    pageno: page,
+    keyword: keyword
+  };
+  return instance.get(`tourlist/keyword`, { params: { ...sending } });
+};
+
 export const getDetails = async (detailId) => {
   const sending = {
     contentid: detailId,
