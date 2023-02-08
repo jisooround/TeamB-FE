@@ -2,7 +2,6 @@
   width: 100%;
   height: auto;
   margin: 45px 0;
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -21,7 +20,7 @@
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
 
   img {
     height: 100%;
@@ -38,6 +37,8 @@
       font-size: 18px;
       font-weight: bold;
       color: #fff;
+      -webkit-user-select: none;
+      ;
     }
   }
 }
