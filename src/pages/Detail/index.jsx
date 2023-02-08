@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import FirstSection from '@components/details/FirstSection';
 import SecondSection from '@components/details/SecondSection';
+import Test from '@components/details/Test';
 import { useLocation, useParams } from 'react-router-dom';
 import { getDetails } from '@api/api';
 import { detailDummydata } from '../../data/dummydata';
@@ -29,28 +30,30 @@ const SectionWrapper = styled.div`
 
 const index = () => {
   const { tourId } = useParams();
-  // const id = 2763807;
   const location = useLocation();
   const [tour, setTour] = useState({});
-  const [error, setError] = useState('');
-
-  // useEffect(() => {
-  //   // 페이지 이동
-  //   if (!location.hash) return;
-  //   // console.log('스크롤 실행');
-  //   gotoID(location.hash);
-  // }, []);
 
   useEffect(() => {
-    try {
-      getDetails(tourId, setTour, setError);
-    } catch (error) {
-      console.log(error);
-    }
+    // 페이지 이동
+    if (!location.hash) return;
+    // console.log('스크롤 실행');
+    gotoID(location.hash);
+  }, [tour]);
+
+  useEffect(() => {
+    getDetails(tourId)
+      .then((res) => {
+        console.log('res', '넣음', res);
+        setTour(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        setTour(detailDummydata);
+      });
   }, [tourId]);
 
-  console.log('location', location);
-  console.log('useParams : tourId', tourId);
+  // console.log('location', location);
+  // console.log('useParams : tourId', tourId);
 
   function gotoID(id) {
     // console.log('gotoID : id', id);
