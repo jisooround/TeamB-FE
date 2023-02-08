@@ -1,7 +1,7 @@
 export const searchListDummyData = [
   {
     addr1: '서울특별시 송파구 올림픽로 424',
-    contentid: 1,
+    contentid: 2763807,
     title: '1올림픽공원',
     cat3: '공원',
     infocenter: '02-688-4777',
@@ -11,7 +11,7 @@ export const searchListDummyData = [
   },
   {
     addr1: '서울특별시 송파구 올림픽로 240',
-    contentid: 2,
+    contentid: 2763807,
     title: '2롯데월드',
     cat3: '테마파크',
     infocenter: '02-688-4777',

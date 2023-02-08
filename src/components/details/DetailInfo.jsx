@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import DetailInfoIcon from './DetailInfoIcon';
 
-const DetailInfo = ({ tour }) => {
+const DetailInfo = ({ tour, id }) => {
   console.log(tour);
   const [optional, setOptional] = useState([]);
 
@@ -25,7 +25,7 @@ const DetailInfo = ({ tour }) => {
 
   return (
     <Wrap>
-      <h3>상세 정보</h3>
+      <h3 id={id}>상세 정보</h3>
       <Essential>
         <li>
           <strong>위치</strong>
