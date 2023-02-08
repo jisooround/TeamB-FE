@@ -16,14 +16,6 @@ const Search = () => {
   return (
     <Container>
       <PageTitle title={'검색 결과'} />
-<<<<<<< HEAD
-
-      <Inner>
-        {searchListDummyData.map((list) => {
-          return <SearchCard list={list} key={list.title} />;
-        })}
-      </Inner>
-=======
       {Array.isArray(searchListDummyData) ? (
         <>
           <h1>{search} 에 대한 검색 결과입니다.</h1>
@@ -46,7 +38,6 @@ const Search = () => {
           setPage={setPage}
         />
       ) : null}
->>>>>>> a8ce596ac64577ea0b8d2699b04c16dbd65aee59
     </Container>
   );
 };

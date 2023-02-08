@@ -19,7 +19,7 @@ const Wishfilter = ({ setLocation, filter, setFilter }) => {
 
   return (
     <Filter className={styles.wrap}>
-      <button className={styles.total} onClick={handleClick} autofocus="autofocus">
+      <button className={styles.total} onClick={handleClick}>
         전체
       </button>
       {setLocation.map((location) => {
