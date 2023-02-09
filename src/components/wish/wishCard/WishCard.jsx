@@ -42,11 +42,13 @@ const WishCard = ({ list }) => {
         <div className={styles.detailWrap}>
           <div className={styles.group}>
             <MdLocationPin className={styles.addrIcon} />
-            <p className={styles.addr1}>{list.addr1 ? list.addr1 : null}</p>
+            <p className={styles.addr1}>{list.addr1 ? list.addr1 : '주소 정보 없음'}</p>
           </div>
           <div className={styles.group}>
             <MdCall className={styles.infocenterIcon} />
-            <p className={styles.infocenter}>{list.infocenter ? list.infocenter : null}</p>
+            <p className={styles.infocenter}>
+              {list.infocenter ? list.infocenter : '전화 정보 없음'}
+            </p>
           </div>
         </div>
       </div>
