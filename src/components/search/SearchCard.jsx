@@ -35,7 +35,7 @@ const SearchCard = ({ list }) => {
         <p className={styles.addr1}>{list.addr1}</p>
         <p className={styles.infocenter}>{list.infocenter}</p>
         <p className={styles.cat3}>
-          #{list.cat3} #{list.inOut}
+          #{list.cat3} {list.inOut ? `# ${list.inOut}` : null}
         </p>
       </div>
     </div>

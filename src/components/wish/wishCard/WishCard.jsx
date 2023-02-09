@@ -11,18 +11,18 @@ const WishCard = ({ list }) => {
   return (
     <div className={styles.wrap}>
       <WishIcon className={styles.wishIcon} list={list} />
-      <div className={styles.image}>
-        <Link to={'/detail/' + list.contentid}>
+      <Link to={'/detail/' + list.contentid}>
+        <div className={styles.image}>
           {list.firstimage ? (
             <img src={list.firstimage} alt={list.title + ' 사진'} />
           ) : (
             <div className={styles.noImage}>
-              <MdImageNotSupported size="84" color="#fff" />
+              <MdImageNotSupported size="84" color="#fff" className={styles.icon} />
               <p>No Image</p>
             </div>
           )}
-        </Link>
-      </div>
+        </div>
+      </Link>
       <div className={styles.info}>
         <div className={styles.titleWrap}>
           <div>
@@ -30,7 +30,7 @@ const WishCard = ({ list }) => {
               <p className={styles.title}>{list.title}</p>
             </Link>
             <p className={styles.cat3}>
-              #{list.cat3} #{list.inOut}
+              #{list.cat3} {list.inOut ? `# ${list.inOut}` : null}
             </p>
           </div>
 
@@ -42,11 +42,11 @@ const WishCard = ({ list }) => {
         <div className={styles.detailWrap}>
           <div className={styles.group}>
             <MdLocationPin className={styles.addrIcon} />
-            <p className={styles.addr1}>{list.addr1}</p>
+            <p className={styles.addr1}>{list.addr1 ? list.addr1 : null}</p>
           </div>
           <div className={styles.group}>
             <MdCall className={styles.infocenterIcon} />
-            <p className={styles.infocenter}>{list.infocenter}</p>
+            <p className={styles.infocenter}>{list.infocenter ? list.infocenter : null}</p>
           </div>
         </div>
       </div>

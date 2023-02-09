@@ -16,8 +16,8 @@
 }
 
 .image {
-  width: 40%;
-  aspect-ratio: 1/1;
+  width: 200px;
+  height: 200px;
   border-radius: 10px;
   overflow: hidden;
   display: flex;
@@ -27,16 +27,24 @@
   background-color: #eee;
 
   img {
-    height: 100%;
+    object-fit: fill;
   }
 
   .noImage {
     display: flex;
-    flex-flow: column;
-    margin-left: 8px;
-    margin-top: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    aspect-ratio: 1/1;
+    justify-content: center;
+    align-content: center;
+    // padding-top: 65px;
+
+    .icon {
+      width: 100%;
+    }
 
     p {
+      width: 100%;
       margin-top: 10px;
       text-align: center;
       font-size: 18px;
@@ -67,7 +75,7 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 7px;
-    width: 100%;
+    width: 85%;
     flex-wrap: wrap;
 
     .title {
