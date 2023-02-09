@@ -9,7 +9,7 @@ const DetailInfo = ({ tour, id }) => {
   useEffect(() => {
     function optionalCheck(tour) {
       const optionalList = [];
-      tour.chkbabycarriage === '있음' ? optionalList.push('유모차 대여') : null;
+      tour.chkbabycarriage === '있음' ? optionalList.push('유아차 대여') : null;
       tour.chkpet === '가능' ? optionalList.push('반려동물 동반') : null;
       tour.chkcreditcard === '가능' ? optionalList.push('신용카드 결제') : null;
       tour.expagerange ? optionalList.push(`체험 연령 ${tour.expagerange}`) : null;

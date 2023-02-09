@@ -2,12 +2,12 @@ import React from 'react';
 import { FaBabyCarriage } from 'react-icons/fa';
 import { FaDog } from 'react-icons/fa';
 import { MdChildCare } from 'react-icons/md';
-// import { heritage } from '../../utils/svg';
+import { BsFillCreditCard2BackFill } from 'react-icons/bs';
 import styled from 'styled-components';
 
 const DetailInfoIcon = ({ name }) => {
   console.log(name);
-  if (name === '유모차 대여') {
+  if (name === '유아차 대여') {
     return (
       <Icon>
         <FaBabyCarriage className="icon" />
@@ -18,6 +18,13 @@ const DetailInfoIcon = ({ name }) => {
     return (
       <Icon>
         <FaDog className="icon" />
+      </Icon>
+    );
+  }
+  if (name === '신용카드 결제') {
+    return (
+      <Icon>
+        <BsFillCreditCard2BackFill className="icon" />
       </Icon>
     );
   }
